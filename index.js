@@ -26,7 +26,7 @@ function copyToClipboard() {
     title: "Nomor telah disalin!",
     text: numberOnly,
     icon: "success",
-    timer: 1000,
+    timer: 2500,
     showConfirmButton: false,
   });
 }
