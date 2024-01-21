@@ -11,22 +11,33 @@ function generateRandomNumber() {
 
 function copyToClipboard() {
   var generatedNumber = document.getElementById("generatedNumber").innerText;
+
   // Menghapus teks "Nomor yang dihasilkan: " dan menyisakan hanya angka
   var numberOnly = generatedNumber.replace("Nomor yang dihasilkan: ", "");
 
-  var tempInput = document.createElement("input");
-  tempInput.value = numberOnly;
-  document.body.appendChild(tempInput);
-  tempInput.select();
-  document.execCommand("copy");
-  document.body.removeChild(tempInput);
+  if (numberOnly.trim() === "") {
+    // Jika nomor belum di-generate, tampilkan pemberitahuan
+    Swal.fire({
+      title: "Silahkan generate nomor terlebih dahulu!",
+      icon: "warning",
+      showCloseButton: true,
+      timer: 3500, // Menutup otomatis setelah 5 detik
+    });
+  } else {
+    var tempInput = document.createElement("input");
+    tempInput.value = numberOnly;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
 
-  // Menggunakan SweetAlert2 untuk alert yang lebih menarik
-  Swal.fire({
-    title: "Nomor telah disalin!",
-    text: numberOnly,
-    icon: "success",
-    timer: 2500,
-    showConfirmButton: false,
-  });
+    // Menggunakan SweetAlert2 untuk alert yang lebih menarik
+    Swal.fire({
+      title: "Nomor telah disalin!",
+      text: numberOnly,
+      icon: "success",
+      showCloseButton: true,
+      timer: 3500, // Menutup otomatis setelah 5 detik
+    });
+  }
 }
