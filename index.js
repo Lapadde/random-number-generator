@@ -1,5 +1,5 @@
 function generateRandomNumber() {
-  var awalanOptions = ["081", "085", "087"];
+  var awalanOptions = ["081", "085", "087", "082"];
   var randomAwalan =
     awalanOptions[Math.floor(Math.random() * awalanOptions.length)];
   var randomDigits = Math.floor(Math.random() * 1000000000);
