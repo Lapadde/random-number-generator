@@ -1,0 +1,15 @@
+body {
+  padding: 20px;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+#generatedNumber {
+  margin: 20px 0;
+}
+
+.btn-group {
+  margin-top: 20px;
+}
